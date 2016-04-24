@@ -1,0 +1,31 @@
+--
+--	Package File Template
+--
+--	Purpose: This package defines supplemental types, subtypes, 
+--		 constants, and functions 
+--
+--   To use any of the example code shown below, uncomment the lines and modify as necessary
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+package and_4bit_pack is
+function and_4bit(in1: std_logic; in2: std_logic_vector) return std_logic_vector;
+end and_4bit_pack;
+
+package body and_4bit_pack is
+
+function and_4b(in1: std_logic; in2: std_logic_vector) return std_logic_vector is
+variable res: std_logic_vector(7 downto 0);
+begin
+	for i in 0 to 7 loop
+		res(i) := in2(i) and in1;
+	end loop;
+	return res;
+end function;
+
+ 
+ 
+ 
+end and_4bit_pack;
